@@ -1974,7 +1974,7 @@ class TagBracketedEqualsSegment(BaseSegment):
         Bracketed(
             Delimited(
                 Sequence(
-                    Ref("NakedIdentifierSegment"),
+                    Ref("TagReferenceSegment"),
                     Ref("EqualsSegment"),
                     Ref("QuotedLiteralSegment"),
                 )
@@ -1982,6 +1982,11 @@ class TagBracketedEqualsSegment(BaseSegment):
         ),
     )
 
+
+class TagReferenceSegment(ansi.ObjectReferenceSegment):
+    """A reference to a tag."""
+
+    type = "tag_reference"
 
 class TagEqualsSegment(BaseSegment):
     """A tag clause.
