@@ -1974,7 +1974,7 @@ class TagBracketedEqualsSegment(BaseSegment):
         Bracketed(
             Delimited(
                 Sequence(
-                    Ref("TagReferenceSegment"),
+                    Ref("TagReferenceSegment"), #NakedIdentiferSegment Before
                     Ref("EqualsSegment"),
                     Ref("QuotedLiteralSegment"),
                 )
